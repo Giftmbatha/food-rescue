@@ -1,127 +1,96 @@
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { FaLeaf, FaHandHoldingHeart, FaMapMarkerAlt, FaSearch } from 'react-icons/fa'; // Importing icons
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-background">
-      {/* Hero Section */}
-      <section className="relative py-20 px-6">
-        <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-5xl md:text-6xl font-bold text-foreground mb-6 text-balance">
-            Welcome to <span className="text-primary">Food Rescue</span>
-          </h1>
-          <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-2xl mx-auto text-pretty">
-            Connect donors and NGOs to reduce food waste and fight hunger in our communities
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild size="lg" className="text-lg px-8 py-6">
-              <Link href="/listings">Browse Food Listings</Link>
-            </Button>
-            <Button asChild variant="secondary" size="lg" className="text-lg px-8 py-6">
-              <Link href="/donate">Donate Food</Link>
-            </Button>
-          </div>
-        </div>
-      </section>
-
-      {/* Impact Stats */}
-      <section className="py-16 px-6 bg-secondary/20">
-        <div className="max-w-6xl mx-auto">
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">10,000+</div>
-              <div className="text-muted-foreground">Meals Rescued</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">500+</div>
-              <div className="text-muted-foreground">Active Donors</div>
-            </div>
-            <div className="text-center">
-              <div className="text-4xl font-bold text-primary mb-2">50+</div>
-              <div className="text-muted-foreground">Partner NGOs</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="py-20 px-6">
-        <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl font-bold text-center text-foreground mb-16">How Food Rescue Works</h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <Card className="text-center border-border">
-              <CardHeader>
-                <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-primary-foreground">🍽️</span>
-                </div>
-                <CardTitle className="text-xl">Donate Surplus Food</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Restaurants, grocery stores, and individuals can easily list surplus food that would otherwise go to
-                  waste.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-border">
-              <CardHeader>
-                <div className="w-16 h-16 bg-secondary rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-secondary-foreground">🤝</span>
-                </div>
-                <CardTitle className="text-xl">Connect with NGOs</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Our platform matches food donations with local NGOs and charities that can distribute them to those in
-                  need.
-                </CardDescription>
-              </CardContent>
-            </Card>
-
-            <Card className="text-center border-border">
-              <CardHeader>
-                <div className="w-16 h-16 bg-accent rounded-full flex items-center justify-center mx-auto mb-4">
-                  <span className="text-2xl text-accent-foreground">❤️</span>
-                </div>
-                <CardTitle className="text-xl">Feed Communities</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <CardDescription className="text-base">
-                  Together, we ensure nutritious food reaches families and individuals who need it most, reducing waste
-                  and hunger.
-                </CardDescription>
-              </CardContent>
-            </Card>
-          </div>
-        </div>
-      </section>
-
-      {/* Call to Action */}
-      <section className="py-20 px-6 bg-primary text-primary-foreground">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-4xl font-bold mb-6">Join the Fight Against Food Waste</h2>
-          <p className="text-xl mb-8 opacity-90 text-pretty">
-            Every meal saved makes a difference. Whether you're a donor or an NGO, you can help create a more
-            sustainable and caring community.
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Button asChild variant="secondary" size="lg" className="text-lg px-8 py-6">
-              <Link href="/register">Get Started Today</Link>
-            </Button>
-            <Button
-              asChild
-              variant="outline"
-              size="lg"
-              className="text-lg px-8 py-6 border-primary-foreground text-primary-foreground hover:bg-primary-foreground hover:text-primary bg-transparent"
+    <div className="flex flex-col items-center justify-center min-h-screen p-6 sm:p-10" style={{ backgroundColor: '#F9F3EF' }}>
+      
+      {/* Main Hero Section */}
+      <div className="w-full max-w-6xl mb-12 overflow-hidden shadow-2xl hero rounded-2xl" style={{ backgroundColor: '#98A1BC' }}>
+        <div className="hero-content text-center text-[#555879] p-8 sm:p-16 flex flex-col lg:flex-row items-center justify-between">
+          <div className="max-w-xl mb-8 lg:text-left lg:pr-10 lg:mb-0">
+            <h1 className="mb-4 text-5xl font-extrabold leading-tight text-white md:text-6xl">
+              Nourish SA, <br className="hidden sm:inline"/> Eliminate Waste!
+            </h1>
+            <p className="py-6 text-lg text-white md:text-xl opacity-90">
+              Join the Food Rescue initiative in South Africa!🇿🇦 We connect generous donors with local NGOs to ensure no good food goes to waste and everyone has access to healthy meals.
+            </p>
+            <Link 
+              className="btn btn-lg bg-[#555879] text-[#F9F3EF] hover:bg-[#F9F3EF] hover:text-[#555879] border-none font-bold transition-colors duration-300 transform hover:scale-105 shadow-lg" 
+              to="/listings"
             >
-              <Link href="/about">Learn More</Link>
-            </Button>
+              <FaSearch className="inline-block mr-2 text-xl" /> Discover Listings
+            </Link>
+          </div>
+          <div className="flex items-center justify-center lg:w-1/2">
+            {/* Image illustrating food rescue */}
+            <img 
+              src="https://images.unsplash.com/photo-1543158182-e6f0b2a24dfa?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              alt="Food Donation" 
+              className="object-cover w-full shadow-xl rounded-xl max-h-80"
+            />
           </div>
         </div>
-      </section>
-    </div>
-  )
-}
+      </div>
 
+      {/* Value Proposition / How It Works Section */}
+      <div className="w-full max-w-6xl mb-12 text-center">
+        <h2 className="text-4xl font-bold text-[#555879] mb-8">How We Make a Difference</h2>
+        <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+          
+          {/* Card 1: Reduce Waste */}
+          <div className="card bg-white shadow-lg rounded-xl p-6 transform hover:scale-105 transition-transform duration-300 border-b-4 border-[#98A1BC]">
+            <div className="p-0 card-body">
+              <FaLeaf className="text-5xl text-[#555879] mx-auto mb-4" />
+              <h3 className="card-title text-2xl font-semibold text-[#555879] mb-3">Reduce Food Waste</h3>
+              <p className="text-gray-600">
+                Prevent edible surplus food from ending up in landfills, positively impacting our environment.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 2: Feed Communities */}
+          <div className="card bg-white shadow-lg rounded-xl p-6 transform hover:scale-105 transition-transform duration-300 border-b-4 border-[#98A1BC]">
+            <div className="p-0 card-body">
+              <FaHandHoldingHeart className="text-5xl text-[#555879] mx-auto mb-4" />
+              <h3 className="card-title text-2xl font-semibold text-[#555879] mb-3">Nourish Our Community</h3>
+              <p className="text-gray-600">
+                Channel nutritious food to those in need, supporting NGOs and vulnerable families in our Communities.
+              </p>
+            </div>
+          </div>
+
+          {/* Card 3: Local Impact */}
+          <div className="card bg-white shadow-lg rounded-xl p-6 transform hover:scale-105 transition-transform duration-300 border-b-4 border-[#98A1BC]">
+            <div className="p-0 card-body">
+              <FaMapMarkerAlt className="text-5xl text-[#555879] mx-auto mb-4" />
+              <h3 className="card-title text-2xl font-semibold text-[#555879] mb-3">Local & Direct</h3>
+              <p className="text-gray-600">
+                Connect directly with local donors and NGOs for efficient, impactful food distribution right here in South Africa.
+              </p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      {/* Call to Action Section */}
+      <div className="w-full max-w-6xl p-10 text-center shadow-xl rounded-2xl" style={{ backgroundColor: '#F9F3EF', border: '2px solid #98A1BC' }}>
+        <h2 className="text-3xl md:text-4xl font-bold text-[#555879] mb-6">Ready to Make a Difference?</h2>
+        <div className="flex flex-col justify-center gap-4 sm:flex-row">
+          <Link 
+            className="btn btn-lg bg-[#555879] text-[#F9F3EF] hover:bg-[#F9F3EF] hover:text-[#555879] border-none font-bold transition-colors duration-300 transform hover:scale-105 shadow-md" 
+            to="/register/donor"
+          >
+            I'm a Donor!
+          </Link>
+          <Link 
+            className="btn btn-lg bg-[#98A1BC] text-[#555879] hover:bg-[#555879] hover:text-[#F9F3EF] border-none font-bold transition-colors duration-300 transform hover:scale-105 shadow-md" 
+            to="/register/ngo"
+          >
+            I'm an NGO!
+          </Link>
+        </div>
+  );
+}
