@@ -27,22 +27,61 @@ export default function Register() {
   };
 
   return (
-    <div className="flex justify-center p-6">
-      <div className="w-full max-w-sm shadow-xl card bg-base-100">
-        <div className="card-body">
-          <h2 className="card-title">Register</h2>
-        {error && <div className="alert alert-error">{error}</div>}
-          <form onSubmit={handleRegister} className="space-y-3">
-            <input type="email" className="w-full input input-bordered" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-            <input type="password" className="w-full input input-bordered" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} />
-            <select className="w-full select select-bordered" value={role} onChange={e=>setRole(e.target.value)}>
-              <option value="ngo">NGO</option>
-              <option value="donor">Donor</option>
-            </select>
-            <button className="w-full btn btn-primary" type="submit">Create account</button>
-          </form>
-          <p className="text-sm">Already have an account? <Link className="link" to="/login">Login</Link></p>
-        </div>
+    <div className="flex justify-center min-h-screen items-center bg-[#F9F3EF] p-6">
+      <div className="w-full max-w-sm shadow-xl bg-white rounded-2xl border border-[#98A1BC]/30 p-6">
+        <h2 className="text-[#555879] text-3xl font-bold text-center mb-6">
+          Register
+        </h2>
+
+        {error && (
+          <div className="mb-4 rounded-lg border border-red-300 bg-red-50 text-red-700 py-2 px-3 text-sm">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleRegister} className="space-y-6">
+          <input
+            type="email"
+            className="w-full h-12 px-4 rounded-lg border border-[#98A1BC]/50 focus:border-[#555879] focus:ring-2 focus:ring-[#98A1BC] bg-[#F9F3EF]/50 text-base"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <input
+            type="password"
+            className="w-full h-12 px-4 rounded-lg border border-[#98A1BC]/50 focus:border-[#555879] focus:ring-2 focus:ring-[#98A1BC] bg-[#F9F3EF]/50 text-base"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <select
+            className="w-full h-12 px-4 rounded-lg border border-[#98A1BC]/50 focus:border-[#555879] focus:ring-2 focus:ring-[#98A1BC] bg-[#F9F3EF]/50 text-base"
+            value={role}
+            onChange={(e) => setRole(e.target.value)}
+          >
+            <option value="ngo">NGO</option>
+            <option value="donor">Donor</option>
+          </select>
+
+          <button
+            className="w-full h-12 rounded-xl bg-[#98A1BC] hover:bg-[#555879] text-white font-semibold transition duration-200"
+            type="submit"
+          >
+            Sign Up
+          </button>
+        </form>
+
+        <p className="text-sm text-center text-[#555879] mt-6">
+          Already have an account?{" "}
+          <link
+            href="/login"
+            className="font-medium text-[#98A1BC] hover:text-[#555879] transition"
+          >
+            Login
+          </link>
+        </p>
       </div>
     </div>
   );
