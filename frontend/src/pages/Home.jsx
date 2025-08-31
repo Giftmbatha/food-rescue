@@ -92,7 +92,5 @@ export default function Home() {
             I'm an NGO!
           </Link>
         </div>
-      </div>
-    </div>
   );
 }

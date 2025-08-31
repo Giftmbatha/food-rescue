@@ -4,19 +4,28 @@ import { clearAuth, getRole } from '../auth';
 import { FaMoon, FaSun, FaPlus, FaUser, FaList, FaSignInAlt, FaUserPlus, FaSignOutAlt, FaLeaf } from 'react-icons/fa';
 
 export default function Navbar() {
-  const navigate = useNavigate();
-  const role = getRole();
+  const router = useRouter()
+  const [role, setRole] = useState<string | null>(null)
+  const [isDark, setIsDark] = useState(false)
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+
+  useEffect(() => {
+    setRole(getRole())
+  }, [])
 
   const toggleTheme = () => {
-    const html = document.querySelector('html');
-    const current = html.getAttribute('data-theme') || 'light';
-    html.setAttribute('data-theme', current === 'light' ? 'dark' : 'light');
-  };
+    const html = document.querySelector("html")
+    const current = html?.getAttribute("data-theme") || "light"
+    const newTheme = current === "light" ? "dark" : "light"
+    html?.setAttribute("data-theme", newTheme)
+    setIsDark(newTheme === "dark")
+  }
 
   const logout = () => {
-    clearAuth();
-    navigate('/login');
-  };
+    clearAuth()
+    setRole(null)
+    router.push("/login")
+  }
 
   return (
     <div className="shadow-lg navbar rounded-b-xl" style={{ backgroundColor: '#555879' }}>
