@@ -25,18 +25,52 @@ export default function Login() {
   };
 
   return (
-    <div className="p-6 flex justify-center">
-      <div className="card w-full max-w-sm bg-base-100 shadow-xl">
-        <div className="card-body">
-          <h2 className="card-title">Login</h2>
-          {error && <div className="alert alert-error">{error}</div>}
-          <form onSubmit={handleLogin} className="space-y-3">
-            <input type="email" className="input input-bordered w-full" placeholder="Email" value={email} onChange={e=>setEmail(e.target.value)} />
-            <input type="password" className="input input-bordered w-full" placeholder="Password" value={password} onChange={e=>setPassword(e.target.value)} />
-            <button className="btn btn-primary w-full" type="submit">Login</button>
-          </form>
-          <p className="text-sm">No account? <Link className="link" to="/register">Register</Link></p>
-        </div>
+    <div className="min-h-screen flex items-center justify-center bg-[#F9F3EF] p-6">
+      <div className="w-full max-w-sm shadow-xl bg-white rounded-2xl border border-[#98A1BC]/30 p-6">
+        <h2 className="text-[#555879] text-3xl font-bold text-center mb-6">
+          Login
+        </h2>
+
+        {error && (
+          <div className="mb-4 rounded-lg border border-red-300 bg-red-50 text-red-700 py-2 px-3 text-sm">
+            {error}
+          </div>
+        )}
+
+        <form onSubmit={handleLogin} className="space-y-6">
+          <input
+            type="email"
+            className="w-full h-12 px-4 rounded-lg border border-[#98A1BC]/50 focus:border-[#555879] focus:ring-2 focus:ring-[#98A1BC] bg-[#F9F3EF]/50 text-base"
+            placeholder="Email"
+            value={email}
+            onChange={(e) => setEmail(e.target.value)}
+          />
+
+          <input
+            type="password"
+            className="w-full h-12 px-4 rounded-lg border border-[#98A1BC]/50 focus:border-[#555879] focus:ring-2 focus:ring-[#98A1BC] bg-[#F9F3EF]/50 text-base"
+            placeholder="Password"
+            value={password}
+            onChange={(e) => setPassword(e.target.value)}
+          />
+
+          <button
+            className="w-full h-12 rounded-xl bg-[#98A1BC] hover:bg-[#555879] text-white font-semibold transition duration-200"
+            type="submit"
+          >
+            Login
+          </button>
+        </form>
+
+        <p className="text-sm text-center text-[#555879] mt-6">
+          No account?{" "}
+          <link
+            href="/register"
+            className="font-medium text-[#98A1BC] hover:text-[#555879] transition"
+          >
+            Register
+          </link>
+        </p>
       </div>
     </div>
   );
