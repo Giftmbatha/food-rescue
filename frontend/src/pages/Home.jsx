@@ -26,7 +26,7 @@ export default function Home() {
           <div className="flex items-center justify-center lg:w-1/2">
             {/* Image illustrating food rescue */}
             <img 
-              src="https://images.unsplash.com/photo-1543158182-e6f0b2a24dfa?auto=format&fit=crop&q=80&w=1974&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
+              src="../assests/close-up-volunteers-working-together.png" 
               alt="Food Donation" 
               className="object-cover w-full shadow-xl rounded-xl max-h-80"
             />
@@ -81,13 +81,13 @@ export default function Home() {
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
           <Link 
             className="btn btn-lg bg-[#555879] text-[#F9F3EF] hover:bg-[#F9F3EF] hover:text-[#555879] border-none font-bold transition-colors duration-300 transform hover:scale-105 shadow-md" 
-            to="/register/donor"
+            to="/register"
           >
             I'm a Donor!
           </Link>
           <Link 
             className="btn btn-lg bg-[#98A1BC] text-[#555879] hover:bg-[#555879] hover:text-[#F9F3EF] border-none font-bold transition-colors duration-300 transform hover:scale-105 shadow-md" 
-            to="/register/ngo"
+            to="/register"
           >
             I'm an NGO!
           </Link>
