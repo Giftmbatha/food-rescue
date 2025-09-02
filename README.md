@@ -6,8 +6,9 @@ A food donation coordination platform linking supermarkets, restaurants, and NGO
 - **Backend** - FastAPI
 - **Database** - SQLite (for production)
 
+
 ## Run Backend
-```bash
+```Bash
 cd backend
 python -m venv .venv
 # Windows: .venv\Scripts\activate
