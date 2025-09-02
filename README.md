@@ -1,5 +1,5 @@
 # food-secure
-A food donation coordination platform linking supermarkets, restaurants, and NGOs to distribute excess food.
+A Food donation coordination platform linking supermarkets, restaurants, and NGOs to distribute excess food.
 
 ## Tech Stack
 - **Frontend** - React + Tailwind + DaisyUI
