@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useNavigate, Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom'; // Link is already imported correctly here
 import { API_URL } from '../api';
 import { saveAuth } from '../auth';
 
@@ -32,7 +32,7 @@ export default function Login() {
         </h2>
 
         {error && (
-          <div className="mb-4 rounded-lg border border-red-300 bg-red-50 text-red-700 py-2 px-3 text-sm">
+          <div className="px-3 py-2 mb-4 text-sm text-red-700 border border-red-300 rounded-lg bg-red-50">
             {error}
           </div>
         )}
@@ -64,15 +64,16 @@ export default function Login() {
 
         <p className="text-sm text-center text-[#555879] mt-6">
           No account?{" "}
-          <link
-            href="/register"
+          {/* --- THE FIX IS ON THIS LINE --- */}
+          <Link
+            to="/register"
             className="font-medium text-[#98A1BC] hover:text-[#555879] transition"
           >
             Register
-          </link>
+          </Link>
+          {/* --- END OF FIX --- */}
         </p>
       </div>
     </div>
   );
 }
-

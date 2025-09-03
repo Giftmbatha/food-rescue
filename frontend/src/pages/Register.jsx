@@ -34,7 +34,7 @@ export default function Register() {
         </h2>
 
         {error && (
-          <div className="mb-4 rounded-lg border border-red-300 bg-red-50 text-red-700 py-2 px-3 text-sm">
+          <div className="px-3 py-2 mb-4 text-sm text-red-700 border border-red-300 rounded-lg bg-red-50">
             {error}
           </div>
         )}
@@ -75,12 +75,14 @@ export default function Register() {
 
         <p className="text-sm text-center text-[#555879] mt-6">
           Already have an account?{" "}
-          <link
-            href="/login"
+          {/* --- THE FIX IS ON THIS LINE --- */}
+          <Link
+            to="/login"
             className="font-medium text-[#98A1BC] hover:text-[#555879] transition"
           >
             Login
-          </link>
+          </Link>
+          {/* --- END OF FIX --- */}
         </p>
       </div>
     </div>
